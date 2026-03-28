@@ -20,9 +20,8 @@ jobs:
       - name: Install, build, and upload
         uses: withastro/action@v3
         with:
-          # This tells the action to use pnpm and which version
-          pnpm-version: 9
-          # Using Node 20 (LTS) or 22 is recommended for stability
+          # Tell the action specifically to use pnpm
+          package-manager: pnpm
           node-version: 22
 
   deploy:
