@@ -16,12 +16,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Install, build, and upload
         uses: withastro/action@v3
         with:
-        #   path: . # The root location of your Astro project inside the repository. (optional)
-            node-version: 24 # The specific version of Node that should be used to build your site. (optional)
-        #   package-manager: npm # The Node package manager that should be used to install dependencies and build your site. (optional)
+          # This tells the action to use pnpm and which version
+          pnpm-version: 9
+          # Using Node 20 (LTS) or 22 is recommended for stability
+          node-version: 22
 
   deploy:
     needs: build
