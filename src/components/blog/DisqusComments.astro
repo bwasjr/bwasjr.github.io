@@ -1,0 +1,38 @@
+---
+export interface Props {
+  slug: string;
+  title: string;
+}
+
+const { slug, title } = Astro.props;
+
+// TODO: Replace with your actual Disqus shortname
+const disqusShortname = "nerdyobsessions";
+
+const disqusConfig = {
+  url: Astro.url.href,
+  identifier: slug,
+  title: title,
+};
+---
+
+{disqusShortname && (
+  <div class="comments-section">
+    <div id="disqus_thread"></div>
+    <script is:inline>
+      var disqus_config = function () {
+        this.page.url = "{disqusConfig.url}";
+        this.page.identifier = "{disqusConfig.identifier}";
+        this.page.title = "{disqusConfig.title}";
+      };
+
+      (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://{disqusShortname}.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+)}
