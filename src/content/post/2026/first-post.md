@@ -1,6 +1,6 @@
 ---
-title: "Hello World"
-description: "My first post"
+title: "Nerdy Obsessions"
+description: "This is the first post"
 publishDate: "28 Mar 2026"
 tags: ["Nerdy Obsessions"]
 ---
@@ -16,3 +16,6 @@ At least for now, you can expect that the next posts will focus on:<br>
 🌐 Indie web <br>
 🐧 Linux <br>
 
+## Say hi down below
+And see you next time.
+<br>
